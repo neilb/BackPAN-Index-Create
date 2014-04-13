@@ -1,0 +1,65 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use BackPAN::Index::Create qw(create_backpan_index);
+use Getopt::Long qw(GetOptions);
+
+my $releases_only = 0;
+my $basedir;
+my $output_file;
+my $argref;
+
+GetOptions(
+    'basedir|b=s'       => \$basedir,
+    'releases-only|r'   => \$releases_only,
+    'output|o=s'        => \$output_file,
+);
+
+if (!$basedir) {
+    die "$0: you must specify the top directory of your BackPAN with -basedir or -b\n";
+}
+
+$argref = { basedir => $basedir, releases_only => $releases_only };
+$argref->{output} = $output_file if $output_file;
+
+create_backpan_index($argref);
+
+exit 0;
+
+=head1 NAME
+
+create-backpan-index - create an index for a local BackPAN mirror
+
+=head1 SYNOPSIS
+
+ create-backpan-index   -basedir E<lt>pathE<gt>
+                      [ -releases-only | -r ]
+                      [ -output E<lt>filenameE<gt> | -o E<lt>filenameE<gt> ]
+
+=head1 DESCRIPTION
+
+B<create-backpan-index> will generate an index for a local BackPAN mirror.
+
+
+=head1 SEE ALSO
+
+L<BackPAN::Index::Create> - the module that provides the functionality for this script.
+
+L<BackPAN::Index> - an interface to an alternate BackPAN index.
+
+=head1 REPOSITORY
+
+L<https://github.com/neilbowers/BackPAN-Index-Create>
+
+=head1 AUTHOR
+
+Neil Bowers E<lt>neilb@cpan.orgE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by Neil Bowers <neilb@cpan.org>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
