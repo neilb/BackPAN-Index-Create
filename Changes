@@ -1,5 +1,10 @@
 Release history for Perl module BackPAN::Index::Create
 
+0.02 2014-05-01
+    - Got rid of uses of __SUB__ (which on checking,
+      I had misunderstood anyway), so I could drop the Perl version dependency
+      to 5.010 (from 5.16). Nudged by BARBIE.
+
 0.01 2014-04-13
     - First release to CPAN
 

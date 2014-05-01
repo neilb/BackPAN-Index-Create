@@ -1,6 +1,6 @@
 package BackPAN::Index::Create;
 
-use 5.016;
+use 5.010;
 use strict;
 use warnings;
 use Exporter::Lite;
@@ -16,18 +16,18 @@ my $FORMAT_REVISION = 1;
 sub create_backpan_index
 {
     if (@_ != 1 || reftype($_[0]) ne 'HASH') {
-        croak __SUB__, "() expects a single hashref argument\n";
+        croak "create_backpan_index() expects a single hashref argument\n";
     }
     my $argref        = shift;
     my $basedir       = $argref->{basedir}
-                        || croak __SUB__, "() must be given a 'basedir'\n";
+                        || croak "create_backpan_index() must be given a 'basedir'\n";
     my $author_dir    = catfile($basedir, 'authors');
     my $stem          = catfile($author_dir, 'id');
     my $releases_only = $argref->{releases_only} // 0;
     my $fh;
 
     if (not -d $author_dir) {
-        croak __SUB__, "() can't find 'authors' directory in basedir ($basedir)\n";
+        croak "create_backpan_index() can't find 'authors' directory in basedir ($basedir)\n";
     }
 
     if (exists($argref->{output})) {
