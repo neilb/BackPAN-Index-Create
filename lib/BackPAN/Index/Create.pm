@@ -83,8 +83,13 @@ BackPAN::Index::Create - generate an index file for a BackPAN mirror
 
 =head1 DESCRIPTION
 
-B<BackPAN::Index::Create> creates a text index file for a BackPAN index.
-By default it will generate an index that looks like this:
+B<BackPAN::Index::Create> provides a function C<create_backpan_index()>
+that will create a text index file for a BackPAN CPAN mirror.
+A BackPAN CPAN mirror is like a regular CPAN mirror, but it has everything
+that has ever been released to CPAN.
+The canonical BackPAN mirror is L<backpan.perl.org|http://backpan.perl.org>.
+
+By default the generated index will look like this:
 
  #FORMAT 1
  authors/id/B/BA/BARBIE/Acme-CPANAuthors-British-1.01.meta.txt 1395991503 1832
@@ -113,8 +118,8 @@ release tarballs, and the paths won't include the leading C<authors/id/>:
 
 =head1 SEE ALSO
 
-L<create-backpan-index> - a script that provides a command-line interface to this module,
-included in the same distribution.
+L<create-backpan-index> - a script that provides a command-line interface
+to this module, included in the same distribution.
 
 L<BackPAN::Index> - an interface to an alternate BackPAN index.
 

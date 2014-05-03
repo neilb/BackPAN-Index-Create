@@ -4,6 +4,8 @@ Release history for Perl module BackPAN::Index::Create
     - Got rid of my one use of // so I could drop down to requiring 5.6. Sigh.
     - The SYNOPSIS made it look like create_backpan_index() is always exported.
       It isn't, so updated SYNOPSIS to make that clear.
+    - Improved the introductory part of the documentation, adding a link
+      to backpan.perl.org
 
 0.02 2014-05-01
     - Got rid of uses of __SUB__ (which on checking,
