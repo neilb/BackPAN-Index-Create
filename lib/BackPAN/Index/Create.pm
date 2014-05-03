@@ -1,6 +1,6 @@
 package BackPAN::Index::Create;
 
-use 5.010;
+use 5.006;
 use strict;
 use warnings;
 use Exporter::Lite;
@@ -23,7 +23,7 @@ sub create_backpan_index
                         || croak "create_backpan_index() must be given a 'basedir'\n";
     my $author_dir    = catfile($basedir, 'authors');
     my $stem          = catfile($author_dir, 'id');
-    my $releases_only = $argref->{releases_only} // 0;
+    my $releases_only = $argref->{releases_only} || 0;
     my $fh;
 
     if (not -d $author_dir) {
