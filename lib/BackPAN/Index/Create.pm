@@ -73,7 +73,7 @@ BackPAN::Index::Create - generate an index file for a BackPAN mirror
 
 =head1 SYNOPSIS
 
- use BackPAN::Index::Create;
+ use BackPAN::Index::Create qw/ create_backpan_index /;
 
  create_backpan_index({
       basedir       => '/path/to/backpan'
