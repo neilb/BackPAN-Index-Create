@@ -2,13 +2,18 @@
 
 use strict;
 use warnings;
-use Test::More 0.88 tests => 4;
+use Test::More 0.88 tests => 5;
 use File::Compare qw/ compare /;
 
-use BackPAN::Index::Create qw/ create_backpan_index /;
+use BackPAN::Index::Create              qw/ create_backpan_index /;
+
+use lib 't/lib';
+use BackPAN::Index::Create::TestUtils   qw/ setup_testpan /;
 
 my $generated_file_name = 't/generated-full-index.txt';
 my $expected_file_name  = 't/expected-full-index.txt';
+
+ok(setup_testpan(), "Set mtime on all files in the TestPAN");
 
 eval {
     create_backpan_index({
