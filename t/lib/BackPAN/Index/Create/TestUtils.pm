@@ -4,9 +4,10 @@ use strict;
 use warnings;
 
 use File::Touch;
+use File::Compare ();
 use parent 'Exporter';
 
-our @EXPORT_OK = qw/ setup_testpan /;
+our @EXPORT_OK = qw/ setup_testpan text_files_match /;
 
 
 sub setup_testpan
@@ -26,3 +27,17 @@ sub touch_file
 
     return $toucher->touch($filename);
 }
+
+sub text_files_match
+{
+    my ($filename1, $filename2) = @_;
+
+    return File::Compare::compare_text($filename1, $filename2,
+                sub {
+                    my ($line1, $line2) = @_;
+                    $line1 =~ s/[\r\n]+$//;
+                    $line2 =~ s/[\r\n]+$//;
+                    return $line1 ne $line2;
+                }) == 0;
+}
+
