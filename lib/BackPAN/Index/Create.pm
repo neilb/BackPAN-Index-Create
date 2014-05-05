@@ -58,6 +58,7 @@ sub create_backpan_index
     foreach my $path ($rule->all($author_dir)) {
         my $tail = $path;
            $tail =~ s!^${stem}[^A-Za-z0-9]+!!;
+           $tail =~ s!\\!/!g if $^O eq 'MSWin32';
         my @stat = stat($path);
         my $time = $stat[9];
         my $size = $stat[7];
@@ -115,6 +116,12 @@ release tarballs, and the paths won't include the leading C<authors/id/>:
 
  #FORMAT 1
  B/BA/BARBIE/Acme-CPANAuthors-British-1.01.tar.gz 1395991561 11231
+
+=head2 Note for Windows users
+
+On Windows the generated index will use '/' as the directory separator,
+as I I<think> that's the right thing to do.
+Please let me know if you think I'm wrong.
 
 =head1 SEE ALSO
 

@@ -1,5 +1,9 @@
 Release history for Perl module BackPAN::Index::Create
 
+0.05 2014-05-05
+    - Make the path separator be / on Windows, so the generated index
+      looks the same everywhere.
+
 0.04 2014-05-04
     - New tests were failing on Windows, because the line endings in the
       generated files weren't the same as the exemplars I generated on
