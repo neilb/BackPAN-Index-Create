@@ -1,5 +1,9 @@
 Release history for Perl module BackPAN::Index::Create
 
+0.06 2014-05-05
+    - A regex that's stripping off the leading path needed \Q .. \E
+      wrapped around the path -- was causing test failures on Windows.
+
 0.05 2014-05-05
     - Make the path separator be / on Windows, so the generated index
       looks the same everywhere.
