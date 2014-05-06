@@ -1,5 +1,10 @@
 Release history for Perl module BackPAN::Index::Create
 
+0.07 2014-05-06
+    - Had to install Strawberry perl on a PC to work out what the problem was.
+      Two of the tests were passing the path to the TestPAN as t/testpan
+      but it needed to be catfile('t', 'testpan'). Doh!
+
 0.06 2014-05-05
     - A regex that's stripping off the leading path needed \Q .. \E
       wrapped around the path -- was causing test failures on Windows.
