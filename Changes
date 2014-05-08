@@ -4,6 +4,7 @@ Release history for Perl module BackPAN::Index::Create
     - Added 'order' argument to create_backpan_index(), which specifies
       what order the entries should be written to the index. Can take
       values 'dist', 'author', and 'age'. Defaults to 'dist'.
+    - Added a -order command-line option to the create-backpan-index.
 
 0.07 2014-05-06
     - Had to install Strawberry perl on a PC to work out what the problem was.
