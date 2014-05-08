@@ -10,8 +10,8 @@ use BackPAN::Index::Create              qw/ create_backpan_index /;
 use lib 't/lib';
 use BackPAN::Index::Create::TestUtils   qw/ setup_testpan text_files_match /;
 
-my $generated_file_name = 't/generated-releases-index.txt';
-my $expected_file_name  = 't/expected-releases-index.txt';
+my $generated_file_name = 't/generated-releases-author-index.txt';
+my $expected_file_name  = 't/expected-releases-author-index.txt';
 
 ok(setup_testpan(), "Set mtime on all files in the TestPAN");
 
@@ -20,7 +20,7 @@ eval {
         basedir         => catfile('t', 'testpan'),
         output          => $generated_file_name,
         releases_only   => 1,
-        order           => 'dist',
+        order           => 'author'
     });
 };
 

@@ -8,12 +8,14 @@ use Getopt::Long qw(GetOptions);
 my $releases_only = 0;
 my $basedir;
 my $output_file;
+my $sort_order;
 my $argref;
 
 GetOptions(
     'basedir|b=s'       => \$basedir,
     'releases-only|r'   => \$releases_only,
     'output|o=s'        => \$output_file,
+    'order=s'           => \$sort_order,
 );
 
 if (!$basedir) {
@@ -22,6 +24,7 @@ if (!$basedir) {
 
 $argref = { basedir => $basedir, releases_only => $releases_only };
 $argref->{output} = $output_file if $output_file;
+$argref->{order}  = $sort_order  if $sort_order;
 
 create_backpan_index($argref);
 
@@ -36,6 +39,7 @@ create-backpan-index - create an index for a local BackPAN mirror
  create-backpan-index   -basedir E<lt>pathE<gt>
                       [ -releases-only | -r ]
                       [ -output E<lt>filenameE<gt> | -o E<lt>filenameE<gt> ]
+                      [ -order dist | age | author ]
 
 =head1 DESCRIPTION
 

@@ -20,6 +20,7 @@ eval {
         basedir         => catfile('t', 'testpan'),
         output          => $generated_file_name,
         releases_only   => 0,
+        order           => 'dist',
     });
 };
 
