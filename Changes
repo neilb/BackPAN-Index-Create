@@ -1,5 +1,9 @@
 Release history for Perl module BackPAN::Index::Create
 
+0.09 2014-05-10
+    - Dropped Mojo::Loader in favour of Module::Find + Module::Runtime,
+      to remove dependency on Mojolicious.
+
 0.08 2014-05-08
     - Added 'order' argument to create_backpan_index(), which specifies
       what order the entries should be written to the index. Can take
