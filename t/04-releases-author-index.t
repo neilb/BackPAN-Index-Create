@@ -3,7 +3,6 @@
 use strict;
 use warnings;
 use Test::More 0.88 tests => 5;
-use File::Spec::Functions               qw/ catfile /;
 
 use BackPAN::Index::Create              qw/ create_backpan_index /;
 
@@ -17,7 +16,7 @@ ok(setup_testpan(), "Set mtime on all files in the TestPAN");
 
 eval {
     create_backpan_index({
-        basedir         => catfile('t', 'testpan'),
+        basedir         => "t/testpan",
         output          => $generated_file_name,
         releases_only   => 1,
         order           => 'author'

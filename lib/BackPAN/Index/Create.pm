@@ -6,7 +6,6 @@ use warnings;
 use Exporter::Lite;
 use Path::Iterator::Rule;
 use Scalar::Util            qw/ reftype /;
-use File::Spec::Functions   qw/ catfile /;
 use Module::Find            qw/ findsubmod /;
 use Module::Runtime         qw/ require_module /;
 use Carp;
@@ -29,8 +28,8 @@ sub create_backpan_index
     my $order            = defined($argref->{order})
                            ? $argref->{order}
                            : $DEFAULT_ORDER;
-    my $author_dir       = catfile($basedir, 'authors');
-    my $stem             = catfile($author_dir, 'id');
+    my $author_dir       = "$basedir/authors";
+    my $stem             = "$author_dir/id";
     my $releases_only    = $argref->{releases_only} || 0;
     my @plugins          = findsubmod($PLUGIN_NAMESPACE);
     my @plugin_basenames = map { my $p = $_; $p =~ s/^.*:://; $p } @plugins;
@@ -72,7 +71,7 @@ sub create_backpan_index
         # Does a BackPAN ever contain anything in a directory
         # other than authors?
         $rule->and(sub { /\.(tar\.gz|tgz|zip)$/ }) if $releases_only;
-        $stem = catfile($author_dir, 'id');
+        $stem = "$author_dir/id";
     }
     else {
         $stem = $basedir;

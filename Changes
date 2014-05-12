@@ -1,5 +1,9 @@
 Release history for Perl module BackPAN::Index::Create
 
+0.10 2014-05-12
+    - Dropped use of catfile, turns out I don't need to use it with
+      Path::Iterator::Rule.
+
 0.09 2014-05-10
     - Dropped Mojo::Loader in favour of Module::Find + Module::Runtime,
       to remove dependency on Mojolicious.
