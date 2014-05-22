@@ -106,6 +106,11 @@ L<BackPAN::Index::Create> - the module that provides the functionality for this 
 
 L<BackPAN::Index> - an interface to an alternate BackPAN index.
 
+L<CPAN Testers BackPAN|http://backpan.cpantesters.org> -
+one of the BackPAN mirrors. It provides four different indexes
+that are generated using this module. The script used to generate
+these can be found in the C<examples> directory of this distribution.
+
 =head1 REPOSITORY
 
 L<https://github.com/neilbowers/BackPAN-Index-Create>

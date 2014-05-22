@@ -139,6 +139,10 @@ Each line contains three items:
 
 =back
 
+You can see indexes created using this module on the
+L<CPAN Testers BackPAN|http://backpan.cpantesters.org>,
+the home page of which also has more information about BackPAN mirrors.
+
 =head1 ARGUMENTS
 
 The supported arguments are all shown in the SYNOPSIS.
@@ -208,6 +212,11 @@ L<create-backpan-index> - a script that provides a command-line interface
 to this module, included in the same distribution.
 
 L<BackPAN::Index> - an interface to an alternate BackPAN index.
+
+L<CPAN Testers BackPAN|http://backpan.cpantesters.org> -
+one of the BackPAN mirrors. It provides four different indexes
+that are generated using this module. The script used to generate
+these can be found in the C<examples> directory of this distribution.
 
 =head1 REPOSITORY
 
