@@ -1,5 +1,8 @@
 Release history for Perl module BackPAN::Index::Create
 
+0.12 2014-08-18
+    - Pod fix from BOOK++
+
 0.11 2014-05-23
     - Added BARBIE's script for generating indexes for BackPAN,
       used on the CPAN Testers BackPAN, in examples/.
