@@ -189,7 +189,7 @@ a deterministic result for a specific BackPAN.
 
 The supported sort orders are defined by plugins in the
 C<BackPAN::Index::Create::OrderBy> namespace. 
-C<Dist.pm>, C<Author.pm>, and <Age.pm> are included in the base distribution.
+C<Dist.pm>, C<Author.pm>, and C<Age.pm> are included in the base distribution.
 If you have installed additional plugins, they'll be automatically available.
 
 Note: CPAN::DistnameInfo doesn't handle paths for files other than
