@@ -78,6 +78,8 @@ sub create_backpan_index
     }
 
     foreach my $path ($rule->all($author_dir)) {
+        next if $path =~ /\s+\z/;
+        next if $path =~ /\n/;
         my $tail = $path;
            $tail =~ s!^\Q${stem}\E[^A-Za-z0-9]+!!;
            $tail =~ s!\\!/!g if $^O eq 'MSWin32';

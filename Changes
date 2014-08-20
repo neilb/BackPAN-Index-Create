@@ -1,6 +1,8 @@
 Release history for Perl module BackPAN::Index::Create
 
-0.12 2014-08-18
+0.12 2014-08-20
+    - Ignore files with trailing space in filename (one dodgy file in DURIST's directory).
+    - Ignore files with embedded newlines in filename (MERLYN!).
     - Pod fix from BOOK++
 
 0.11 2014-05-23
